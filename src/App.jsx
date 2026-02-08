@@ -20,29 +20,30 @@ import WhatsAppWidget from "./Components/WhatsAppWidget";
 
 function App() {
   return (
-    <Router>
-      {/* Preloader (loads once on initial app load) */}
-      <Preloader />
+    <HelmetProvider>
+      <Router>
+        {/* Preloader (loads once on initial app load) */}
+        <Preloader />
 
-      <ScrollToTop />
-      
-      <WhatsAppWidget />
+        <ScrollToTop />
 
-      <Header />
+        <WhatsAppWidget />
 
-      <Routes>
-        {/* VDC Program Routes */}
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutProgram />} />
-        <Route path="/structure" element={<ProgramStructurePage />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/enroll" element={<EnrollPage />} />
-        <Route path="/module-1" element={<ModuleOnePage />} />
-        <Route path="/module-2" element={<ModuleTwoPage />} />
-        <Route path="/module-3" element={<ModuleThreePage />} />
-      </Routes>
+        <Header />
 
-      <Footer />
+        <Routes>
+          {/* VDC Program Routes */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutProgram />} />
+          <Route path="/structure" element={<ProgramStructurePage />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/enroll" element={<EnrollPage />} />
+          <Route path="/module-1" element={<ModuleOnePage />} />
+          <Route path="/module-2" element={<ModuleTwoPage />} />
+          <Route path="/module-3" element={<ModuleThreePage />} />
+        </Routes>
+
+        <Footer />
       </Router>
     </HelmetProvider>
   );
