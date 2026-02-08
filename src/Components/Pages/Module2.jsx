@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, Calculator, TrendingUp, Building2, Lightbulb, Briefcase, PieChart, Target, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "../SEO";
 
 // --- Animation Variants ---
 const fadeInUp = {

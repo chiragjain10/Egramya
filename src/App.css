@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-
-
 @keyframes floatIcon {
   0% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
@@ -10,4 +8,13 @@
 
 .icon-float {
   animation: floatIcon 3.5s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
 }

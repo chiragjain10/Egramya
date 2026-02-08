@@ -1,10 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import SEO from "../SEO";
 
 const EnrollPage = () => {
   return (
     <div className="min-h-screen bg-[#F9F8F6] font-sans pt-24 pb-20">
+      <SEO 
+        title="Enroll Now" 
+        description="Apply for the Village Dairy Counsellors Program. Admissions are open for the upcoming batch. Start your journey towards becoming a rural leader."
+        keywords="Enroll VDC Program, Dairy Course Admission, Rural Women Job Training, Apply Gramya"
+      />
       <div className="max-w-4xl mx-auto px-6">
         
         {/* Header */}

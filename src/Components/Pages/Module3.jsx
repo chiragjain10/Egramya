@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, Users, MessageSquare, MapPin, GraduationCap, Heart, Globe, Target, Compass } from "lucide-react";
+import SEO from "../SEO";
 
 // --- Animation Variants ---
 const fadeInUp = {

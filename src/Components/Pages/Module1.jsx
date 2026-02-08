@@ -96,9 +96,14 @@ const StatPill = ({ icon: Icon, label, value }) => (
 
 const ModuleOnePage = () => {
     return (
-        <div className="min-h-screen bg-[#F9F8F6] font-sans selection:bg-[#0ea771]/20">
+        <div className="min-h-screen bg-stone-50 font-sans selection:bg-[#0ea771]/20">
+            <SEO 
+                title="Module 1: Dairy Farming Basics" 
+                description="Foundation module of VDC program. Learn about cattle breeds, housing management, animal health, and hygiene standards."
+                keywords="Dairy Farming Basics, Animal Husbandry Course, Cattle Breeds, Dairy Hygiene Training"
+            />
             
-            {/* ================= 1. COMPACT BREADCRUMB HEADER ================= */}
+            {/* ================= 1. HEADER ================= */}
             <header className="relative h-[45vh] min-h-[400px] overflow-hidden mt-25">
                 <div className="absolute inset-0">
                     <img 
