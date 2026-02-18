@@ -1,115 +1,147 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Preloader = () => {
-  const [visible, setVisible] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setVisible(false);
-    }, 2200); // 2.2s preloader
+      setIsLoading(false);
+    }, 2500); // Slightly longer to let the premium animation breathe
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (!visible) return null;
-
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#F9F8F6] transition-opacity duration-700">
-      <div className="flex flex-col items-center text-center px-6">
+    <AnimatePresence>
+      {isLoading && (
+        <motion.div
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#fffafa]"
+        >
+          <div className="relative flex flex-col items-center justify-center">
+            
+            {/* --- CENTRAL LOGO ANIMATION --- */}
+            <div className="relative w-32 h-32 mb-8">
+              <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible">
+                <defs>
+                  <linearGradient id="roseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#be123c" />
+                    <stop offset="100%" stopColor="#fb7185" />
+                  </linearGradient>
+                </defs>
 
-        {/* Logo */}
-        <div className="mb-10">
-          <h1 className="font-serif text-3xl font-bold text-[#0ea771]">
-            Egramya
-          </h1>
-          <p className="mt-1 text-xs uppercase tracking-[0.25em] text-stone-500">
-            Village Dairy Counsellor Program
-          </p>
-        </div>
+                {/* Outer Rotating Ring (Thin) */}
+                <motion.circle
+                  cx="50"
+                  cy="50"
+                  r="46"
+                  fill="none"
+                  stroke="#fb7185"
+                  strokeWidth="1"
+                  strokeOpacity="0.2"
+                />
+                
+                {/* Active Spinner Ring */}
+                <motion.circle
+                  cx="50"
+                  cy="50"
+                  r="46"
+                  fill="none"
+                  stroke="url(#roseGradient)"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  initial={{ pathLength: 0, rotate: -90 }}
+                  animate={{ 
+                    pathLength: 1, 
+                    rotate: 270,
+                    transition: { duration: 2, ease: "easeInOut" }
+                  }}
+                />
 
-        {/* Animation */}
-        <div className="relative w-[140px] h-[140px] mb-10">
+                {/* Central Milk/Teardrop Shape */}
+                <motion.path
+                  d="M50 20 C50 20 25 50 25 65 C25 80 36 90 50 90 C64 90 75 80 75 65 C75 50 50 20 50 20 Z"
+                  fill="#881337"
+                  stroke="none"
+                  initial={{ scale: 0, opacity: 0, y: 10 }}
+                  animate={{ 
+                    scale: 1, 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { delay: 0.3, duration: 0.8, type: "spring", stiffness: 100 } 
+                  }}
+                />
 
-          {/* Progress Ring */}
-          <svg
-            viewBox="0 0 140 140"
-            className="absolute inset-0 w-full h-full -rotate-90"
-          >
-            <circle
-              cx="70"
-              cy="70"
-              r="65"
-              fill="none"
-              stroke="#0ea771"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeDasharray="360"
-              strokeDashoffset="360"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="360"
-                to="0"
-                dur="2.2s"
-                fill="freeze"
-                keyTimes="0;0.7;1"
-                values="360;90;0"
+                {/* Inner Highlight (Glossy effect) */}
+                <motion.path
+                  d="M40 55 Q 40 45 48 38"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeOpacity="0.4"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={{ 
+                    pathLength: 1, 
+                    opacity: 1,
+                    transition: { delay: 0.8, duration: 0.5 } 
+                  }}
+                />
+              </svg>
+
+              {/* Pulsing Glow behind */}
+              <motion.div 
+                className="absolute inset-0 bg-rose-500 blur-2xl rounded-full -z-10"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ 
+                  opacity: [0, 0.2, 0], 
+                  scale: [0.8, 1.2, 1.2],
+                  transition: { duration: 2, repeat: Infinity } 
+                }}
               />
-            </circle>
-          </svg>
+            </div>
 
-          {/* Dairy Icon */}
-          <svg
-            viewBox="0 0 100 100"
-            className="absolute inset-0 m-auto w-16 h-16 text-[#0ea771]"
-          >
-            {/* Milk Drop */}
-            <path
-              d="M50,20 C55,20 65,30 65,40 C65,55 50,70 50,70 C50,70 35,55 35,40 C35,30 45,20 50,20 Z"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeDasharray="150"
-              strokeDashoffset="150"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="150"
-                to="0"
-                dur="1.5s"
-                begin="0.4s"
-                fill="freeze"
+            {/* --- TEXT REVEAL --- */}
+            <div className="text-center space-y-3 overflow-hidden">
+              <motion.h1 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ 
+                  y: 0, 
+                  opacity: 1,
+                  transition: { delay: 0.5, duration: 0.8, ease: "backOut" }
+                }}
+                className="font-bold text-3xl tracking-tight text-[#881337]"
+              >
+                GRAMYA
+              </motion.h1>
+
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ 
+                  width: "100%",
+                  transition: { delay: 0.7, duration: 0.8 } 
+                }}
+                className="h-[1px] bg-rose-200 mx-auto"
               />
-            </path>
 
-            {/* Leaf */}
-            <path
-              d="M50,40 C55,35 65,30 70,35 C75,40 75,50 70,55 C65,60 55,65 50,60 C45,65 35,60 30,55 C25,50 25,40 30,35 C35,30 45,35 50,40 Z"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeDasharray="120"
-              strokeDashoffset="120"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="120"
-                to="0"
-                dur="1.5s"
-                begin="0.8s"
-                fill="freeze"
-              />
-            </path>
-          </svg>
-        </div>
+              <motion.p 
+                initial={{ opacity: 0 }}
+                animate={{ 
+                  opacity: 1,
+                  transition: { delay: 1, duration: 0.8 }
+                }}
+                className="text-[10px] font-black tracking-[0.3em] text-[#be123c] uppercase"
+              >
+                VDC Program Loading
+              </motion.p>
+            </div>
 
-        {/* Loading Text */}
-        <p className="text-xs uppercase tracking-[0.3em] text-stone-500 animate-pulse">
-          Preparing the Program
-        </p>
-
-      </div>
-    </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

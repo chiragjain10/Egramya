@@ -4,7 +4,7 @@ import SEO from "../SEO";
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2069&auto=format&fit=crop",
+    src: "",
     title: "Leadership Training",
     category: "Workshop"
   },
