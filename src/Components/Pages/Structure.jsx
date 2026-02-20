@@ -9,8 +9,6 @@ import {
   TrendingUp, 
   Users2 
 } from "lucide-react";
-import SEO from "../SEO"; // Ensure this path is correct in your project
-
 // --- Sub-Components ---
 const ModuleSummaryCard = ({ weekRange, type, title, description, skills, icon: Icon, delay }) => (
   <motion.div 
