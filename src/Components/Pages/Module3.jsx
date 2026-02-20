@@ -116,7 +116,7 @@ const ModuleThreePage = () => {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center gap-3 text-rose-200 text-[10px] font-bold tracking-[0.3em] uppercase mb-8"
           >
-            <Link to="/programs" className="hover:text-white transition-colors">VDC Program</Link>
+            <Link to="/structure" className="hover:text-white transition-colors">VDC Program</Link>
             <ChevronRight size={14} />
             <span className="text-white">Module 03</span>
           </motion.div>
@@ -266,7 +266,7 @@ const ModuleThreePage = () => {
               </div>
            </Link>
 
-           <Link to="/programs" className="group flex items-center gap-6 text-right">
+           <Link to="/structure" className="group flex items-center gap-6 text-right">
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-widest leading-none mb-1 text-rose-400">Back to</p>
                 <p className="text-xl font-bold text-[#881337]">All Programs</p>

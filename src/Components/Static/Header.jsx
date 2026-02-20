@@ -5,6 +5,7 @@ import { Mail, Phone, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isModuleOpen, setIsModuleOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -14,8 +15,7 @@ const Header = () => {
   }, []);
 
   const navClass = ({ isActive }) =>
-    `text-sm font-medium transition-colors duration-200 ${
-      isActive ? "text-[#be123c] font-bold" : "text-gray-700 hover:text-[#be123c]"
+    `text-sm font-medium transition-colors duration-200 ${isActive ? "text-[#be123c] font-bold" : "text-gray-700 hover:text-[#be123c]"
     }`;
 
   return (
@@ -52,20 +52,20 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-4 sm:gap-6">
             {/* IIT Patna / FIST Logo Placeholder */}
             <div className="flex flex-col items-center">
-               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center border border-rose-100 shadow-sm">
-                  <span className="text-[10px] font-bold text-[#881337] text-center leading-tight">IIT<br/>Patna</span>
-               </div>
-               <span className="text-[8px] font-bold text-rose-900 mt-1 uppercase">FIST</span>
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center border border-rose-100 shadow-sm">
+                <span className="text-[10px] font-bold text-[#881337] text-center leading-tight">IIT<br />Patna</span>
+              </div>
+              <span className="text-[8px] font-bold text-rose-900 mt-1 uppercase">FIST</span>
             </div>
 
             <div className="h-10 w-px bg-rose-200"></div>
 
             {/* GRAMYA Logo Placeholder */}
             <div className="flex flex-col items-center">
-               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center border border-rose-100 shadow-sm">
-                  <span className="text-[10px] font-bold text-[#881337] text-center leading-tight">GRAMYA</span>
-               </div>
-               <span className="text-[8px] font-bold text-rose-900 mt-1 uppercase">Bhopal</span>
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center border border-rose-100 shadow-sm">
+                <span className="text-[10px] font-bold text-[#881337] text-center leading-tight">GRAMYA</span>
+              </div>
+              <span className="text-[8px] font-bold text-rose-900 mt-1 uppercase">Bhopal</span>
             </div>
 
             {/* Text Title (Desktop) */}
@@ -79,9 +79,48 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-8">
             <NavLink to="/" className={navClass}>Home</NavLink>
             <NavLink to="/about" className={navClass}>About</NavLink>
+            <div className="relative group">
+              {/* Parent link */}
+              <NavLink to="" className={navClass}>
+                Module
+              </NavLink>
+              {/* Dropdown */}
+              <div
+                className="
+      absolute left-0 top-full mt-2
+      invisible opacity-0 translate-y-2
+      group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
+      transition-all duration-300 ease-out
+      bg-white shadow-xl rounded-md
+      min-w-[160px]
+      z-50
+    "
+              >
+                <NavLink
+                  to="/module-1"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                >
+                  Module 1
+                </NavLink>
+
+                <NavLink
+                  to="/module-2"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                >
+                  Module 2
+                </NavLink>
+
+                <NavLink
+                  to="/module-3"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                >
+                  Module 3
+                </NavLink>
+              </div>
+            </div>
             <NavLink to="/structure" className={navClass}>Programs</NavLink>
             <NavLink to="/gallery" className={navClass}>Gallery</NavLink>
-            
+
             <Link
               to="/enroll"
               className="px-6 py-2.5 bg-[#be123c] text-white text-sm font-semibold rounded-full hover:bg-[#9f1239] transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 duration-200"
@@ -113,11 +152,81 @@ const Header = () => {
                 <X size={24} />
               </button>
             </div>
-            
+
             <div className="flex-1 overflow-y-auto p-6 space-y-6">
               <div className="space-y-4 flex flex-col text-lg font-medium text-gray-800">
-                <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#be123c]">Home</Link>
-                <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#be123c]">About Program</Link>
+                <Link
+                  to="/"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="hover:text-[#be123c]"
+                >
+                  Homez
+                </Link>
+
+                <Link
+                  to="/about"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="hover:text-[#be123c]"
+                >
+                  About Program
+                </Link>
+
+                {/* MODULE DROPDOWN (MOBILE) */}
+                <div className="flex flex-col">
+                  <button
+                    onClick={() => setIsModuleOpen(!isModuleOpen)}
+                    className="
+      flex items-center justify-between
+      hover:text-[#be123c]
+      text-left
+    "
+                  >
+                    <span>Module</span>
+                    <span
+                      className={`transition-transform duration-300 ${isModuleOpen ? 'rotate-180' : ''
+                        }`}
+                    >
+                      ▾
+                    </span>
+                  </button>
+
+                  {isModuleOpen && (
+                    <div className="ml-4 mt-2 flex flex-col gap-2 text-sm">
+                      <Link
+                        to="/module-1"
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          setIsModuleOpen(false);
+                        }}
+                        className="hover:text-[#be123c]"
+                      >
+                        Module 1
+                      </Link>
+
+                      <Link
+                        to="/module-2"
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          setIsModuleOpen(false);
+                        }}
+                        className="hover:text-[#be123c]"
+                      >
+                        Module 2
+                      </Link>
+
+                      <Link
+                        to="/module-3"
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          setIsModuleOpen(false);
+                        }}
+                        className="hover:text-[#be123c]"
+                      >
+                        Module 3
+                      </Link>
+                    </div>
+                  )}
+                </div>
                 <Link to="/structure" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#be123c]">Programs</Link>
                 <Link to="/gallery" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#be123c]">Gallery</Link>
               </div>
@@ -131,7 +240,7 @@ const Header = () => {
                   Apply Now
                 </Link>
               </div>
-              
+
               <div className="pt-6 text-sm text-gray-600">
                 <p className="font-bold text-[#881337] mb-2">Contact Us</p>
                 <p>chairman@absolutegramya.com</p>
