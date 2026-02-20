@@ -46,17 +46,17 @@ const CountUp = ({ end, duration = 2 }) => {
 const HeroSlider = () => {
   const slides = [
     {
-      img: "https://images.unsplash.com/photo-1567303314286-68357ad06417?q=80&w=1000&auto=format&fit=crop",
+      img: "img/image/ (10).jpeg",
       title: "Empowering Rural Women",
       subtitle: "Building Self-Reliant Communities through Dairy Farming"
     },
     {
-      img: "https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=2070&auto=format&fit=crop",
+      img: "img/image/ (20).jpeg",
       title: "Skill Development Mission",
       subtitle: "Free Training for Sustainable Livelihoods"
     },
     {
-      img: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070&auto=format&fit=crop",
+      img: "img/image/ (1).jpeg",
       title: "Leadership & Enterprise",
       subtitle: "Creating Tomorrow's Village Leaders"
     }
@@ -464,11 +464,16 @@ const StrategicUpdates = () => {
 const MouGallery = () => {
   // Placeholder images for MoU signing
   const images = [
-    "https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=1932&auto=format&fit=crop", // Meeting
-    "https://images.unsplash.com/photo-1560179707-f14e90ef3dab?q=80&w=1974&auto=format&fit=crop", // Handshake
-    "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop", // Conference
-    "https://images.unsplash.com/photo-1558403194-611308249627?q=80&w=2070&auto=format&fit=crop", // Discussion
-    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"  // Office
+    "img/image/ (1).jpeg", 
+    "img/image/ (2).jpeg", 
+    "img/image/ (3).jpeg", 
+    "img/image/ (4).jpeg", 
+    "img/image/ (5).jpeg", 
+    "img/image/ (6).jpeg", 
+    "img/image/ (7).jpeg" , 
+    "img/image/ (8).jpeg",
+      "img/image/ (9).jpeg",
+        "img/image/ (10).jpeg",
   ];
 
   return (
@@ -540,7 +545,7 @@ const Home = () => {
           <div className="relative">
             <div className="absolute top-6 -left-6 w-full h-full border-2 border-[#be123c] z-0 rounded-lg"></div>
             <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2069&auto=format&fit=crop"
+              src="img/b2.jpeg"
               alt="About"
               className="relative z-10 w-full h-[500px] object-cover shadow-2xl rounded-lg"
             />

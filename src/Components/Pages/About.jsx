@@ -99,7 +99,7 @@ const AboutProgram = () => {
               className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white"
             >
               <img 
-                src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070&auto=format&fit=crop" 
+                src="img/image/ (10).jpeg" 
                 alt="Community work" 
                 className="w-full h-[500px] object-cover"
               />
