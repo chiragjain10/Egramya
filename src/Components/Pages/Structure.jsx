@@ -131,7 +131,7 @@ const ProgramStructurePage = () => {
             weekRange="Weeks 5-6"
             type="Leadership"
             title="Community Leadership"
-            description="Empowering women to become leaders in their villages. Focus on self-help group formation, public speaking, and community mobilization."
+            description="Empowering women and Youth to become leaders in their villages. Focus on self-help group formation, public speaking, and community mobilization."
             skills={["Public Speaking", "Team Building", "Social Impact"]}
             icon={Users2}
             delay={0.3}

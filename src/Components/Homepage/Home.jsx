@@ -14,7 +14,7 @@ import {
   Calendar,
   FileText,
   Building2,
-  ScrollText
+  ScrollText, ShieldCheck, GraduationCap, Globe
 } from "lucide-react";
 
 import SEO from "../SEO";
@@ -47,7 +47,7 @@ const HeroSlider = () => {
   const slides = [
     {
       img: "img/image/ (10).jpeg",
-      title: "Empowering Rural Women",
+      title: "Empowering Rural Women and Youth",
       subtitle: "Building Self-Reliant Communities through Dairy Farming"
     },
     {
@@ -334,124 +334,148 @@ const EnrollForm = () => {
 
 const StrategicUpdates = () => {
   return (
-    <section className="py-20 bg-white relative">
+    <section className="py-24 bg-[#fafafa] relative overflow-hidden">
+      {/* Decorative background element */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#fff1f2]/50 skew-x-12 translate-x-32 -z-10" />
+
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        <div className="flex flex-col md:flex-row gap-16">
 
-          {/* Left: Official Letter / Announcement Content */}
-          <div className="md:w-2/3">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="w-12 h-1 bg-[#be123c]"></span>
-              <span className="text-[#be123c] font-bold tracking-widest uppercase text-xs">Official Communication</span>
-            </div>
-
-            <h2 className="text-3xl md:text-4xl font-bold text-[#881337] mb-8 font-serif leading-tight">
-              Strategic Partnership with IIT Patna & <br /> Government Recognition
+        {/* Partner Ecosystem Header */}
+        <div className="flex flex-wrap items-center justify-between gap-8 mb-16 pb-8 border-b border-gray-200">
+          <div className="flex flex-col">
+            <span className="text-[#be123c] font-bold tracking-[0.2em] uppercase text-xs mb-2 flex items-center gap-2">
+              <ShieldCheck size={16} /> Strategic Alliance 2026
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#881337] font-serif">
+              Institutional Synergy
             </h2>
+          </div>
 
-            <div className="prose prose-lg text-gray-600 leading-relaxed space-y-6 text-justify">
-              <p>
-                We are pleased to announce a landmark collaboration between <strong>GRAMYA, Bhopal</strong> and <strong>FIST, IIT Patna</strong>. This MoU aims to strengthen village-level dairy ecosystems through structured capacity building, leadership development, and institutional linkages.
+          {/* Logo/Name Badges */}
+          <div className="flex flex-wrap gap-4">
+            {['IIT Patna', 'IHM Bhopal', 'SGSU Global', 'GRAMYA'].map((partner) => (
+              <span key={partner} className="px-4 py-2 bg-white shadow-sm ring-1 ring-gray-200 rounded text-sm font-semibold text-gray-700">
+                {partner}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-16">
+
+          {/* Left: Content Body */}
+          <div className="lg:w-2/3">
+            <div className="prose prose-lg max-w-none">
+              <p className="text-xl text-gray-700 leading-relaxed font-light mb-8">
+                We are proud to announce the formation of a <strong>Quad-Institutional Consortium</strong>. This landmark collaboration between <strong>GRAMYA</strong>, <strong>FIST-IIT Patna</strong>, <strong>IHM</strong>, and <strong>Scope Global Skill University (SGSU)</strong> establishes a premier ecosystem for rural industrialization.
               </p>
 
-              <div className="bg-[#fff1f2] p-8 border-l-4 border-[#be123c] rounded-r-lg my-8 shadow-sm">
-                <h4 className="font-bold text-[#881337] mb-3 flex items-center gap-2">
-                  <ScrollText size={20} /> Key Development: Meeting with CM's Secretariat
-                </h4>
-                <p className="text-sm italic text-gray-700 mb-4">
-                  "On 20th January 2026, a delegation from GRAMYA led by Dr. Ranjan Kumar and Dr. Bhaskar Mishra met with Mr. Chandrashekhar Valimbe, Secretary to the Hon’ble Chief Minister of Madhya Pradesh."
-                </p>
-                <p className="text-sm text-gray-700">
-                  During the meeting, the objectives and long-term vision of the Village Dairy Counsellors Training Programme were presented. Mr. Valimbe conveyed that the <strong>Hon’ble Chief Minister</strong> has shown keen interest in this initiative, particularly as <strong>2026 has been declared the 'Agriculture Year'</strong> in the state.
-                </p>
-              </div>
-
-              <p>
-                The vision is to position Madhya Pradesh as a leader in milk production in India. We are honored to share that the Hon’ble Chief Minister has consented to attend the upcoming workshop as the Chief Guest.
-              </p>
-
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-6">
-                <h5 className="font-bold text-gray-800 mb-2">Invitation to Launch Ceremony</h5>
-                <p className="text-sm text-gray-600 mb-4">
-                  "We are pleased to invite you to grace the Launching Ceremony of the Village Dairy Counsellors Training and Development Programme... Your institution’s association lends immense credibility, technical depth and national stature to this national level initiative."
-                </p>
-                <div className="flex flex-wrap gap-4 mt-4">
-                  <span className="px-3 py-1 bg-white border border-gray-300 rounded text-xs font-bold text-gray-600">Ref: MoU/GRAMYA/IIT-P/2026</span>
-                  <span className="px-3 py-1 bg-white border border-gray-300 rounded text-xs font-bold text-gray-600">Date: Feb 08, 2026</span>
+              <div className="grid md:grid-cols-3 gap-6 mb-10">
+                <div className="p-5 bg-white border-t-2 border-[#be123c] shadow-sm">
+                  <div className="text-[#be123c] mb-3"><GraduationCap size={24} /></div>
+                  <h4 className="font-bold text-gray-900 text-sm mb-1">IIT Patna</h4>
+                  <p className="text-xs text-gray-600">Technological R&D & Digital Dairy Infrastructure</p>
+                </div>
+                <div className="p-5 bg-white border-t-2 border-[#be123c] shadow-sm">
+                  <div className="text-[#be123c] mb-3"><Building2 size={24} /></div>
+                  <h4 className="font-bold text-gray-900 text-sm mb-1">IHM & SGSU</h4>
+                  <p className="text-xs text-gray-600">Quality Standards & Global Skill Certification</p>
+                </div>
+                <div className="p-5 bg-white border-t-2 border-[#be123c] shadow-sm">
+                  <div className="text-[#be123c] mb-3"><Globe size={24} /></div>
+                  <h4 className="font-bold text-gray-900 text-sm mb-1">GRAMYA</h4>
+                  <p className="text-xs text-gray-600">Last-mile Implementation & Village Leadership</p>
                 </div>
               </div>
+
+              {/* Executive Highlight */}
+              <div className="bg-white p-8 ring-1 ring-gray-200 rounded-xl relative shadow-2xl shadow-rose-100/50 my-12">
+                <div className="absolute -top-4 left-8 bg-[#881337] text-white px-4 py-1 text-xs font-bold uppercase tracking-widest">
+                  Executive Briefing
+                </div>
+                <h4 className="font-bold text-[#881337] mb-4 flex items-center gap-2 text-xl">
+                  <ScrollText size={22} /> Engagement with CM's Secretariat
+                </h4>
+                <p className="text-gray-700 italic border-l-2 border-rose-200 pl-4 mb-6">
+                  "On January 20th, 2026, the leadership delegation led by Dr. Ranjan Kumar and Dr. Bhaskar Mishra presented the multi-partner roadmap to Mr. Chandrashekhar Valimbe, Secretary to the Hon’ble Chief Minister."
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  The initiative aligns perfectly with the state's declaration of <strong>2026 as the 'Agriculture Year'</strong>. The Hon’ble Chief Minister has recognized this consortium as a vital engine for making Madhya Pradesh a national leader in high-tech, certified milk production.
+                </p>
+              </div>
+
+              <p className="text-gray-600">
+                This partnership ensures that Village Dairy Counsellors are not only trained in traditional husbandry but are also certified under <strong>Global Skill Standards (SGSU)</strong> and <strong>Hospitality Quality Protocols (IHM)</strong>, backed by <strong>IIT Patna's</strong> technical excellence.
+              </p>
             </div>
           </div>
 
-          {/* Right: Quick Links / Sidebar */}
-          <div className="md:w-1/3 space-y-8">
-            <div className="bg-[#881337] text-white p-8 rounded-sm shadow-xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-4 opacity-10">
-                <Calendar size={100} />
+          {/* Right: Sidebar Timeline & Resources */}
+          <div className="lg:w-1/3 space-y-8">
+            {/* Event Timeline */}
+            <div className="bg-[#881337] text-white p-8 rounded-2xl shadow-2xl relative overflow-hidden">
+              <div className="absolute -bottom-10 -right-10 opacity-10">
+                <Calendar size={200} />
               </div>
-              <h3 className="text-xl font-bold mb-6 border-b border-rose-400 pb-4 font-serif relative z-10">Important Dates</h3>
-              <ul className="space-y-6 relative z-10">
-                <li className="flex gap-4 items-start">
-                  <div className="bg-white/10 backdrop-blur-sm p-3 rounded text-center min-w-[3.5rem] border border-white/20">
-                    <span className="block text-xs font-bold text-rose-200">FEB</span>
-                    <span className="block text-2xl font-bold">11</span>
+              <h3 className="text-xl font-bold mb-8 border-b border-rose-400/30 pb-4 font-serif relative z-10">Important Dates</h3>
+              <div className="space-y-8 relative z-10">
+                {[
+                  { day: '11', month: 'FEB', title: 'Alliance Launch', desc: 'Consortium Sign-off Ceremony' },
+                  { day: '23', month: 'FEB', title: 'State Workshop', desc: 'CM Keynote (Tentative)' },
+                  { day: '09', month: 'MAR', title: 'Technical Summit', desc: 'Curriculum Validation @ IIT Patna' }
+                ].map((event, idx) => (
+                  <div key={idx} className="flex gap-4 group">
+                    <div className="bg-white/10 backdrop-blur-md p-3 rounded-lg text-center min-w-[3.5rem] ring-1 ring-white/20 group-hover:bg-white/20 transition-all">
+                      <span className="block text-xs font-bold text-rose-200">{event.month}</span>
+                      <span className="block text-2xl font-bold">{event.day}</span>
+                    </div>
+                    <div>
+                      <p className="font-bold text-lg leading-tight group-hover:text-rose-200 transition-colors">{event.title}</p>
+                      <p className="text-xs text-rose-200/80 mt-1">{event.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-bold text-lg leading-tight">Program Launch Ceremony</p>
-                    <p className="text-xs text-rose-200 mt-1">Village Dairy Counsellors Program</p>
-                  </div>
-                </li>
-                <li className="flex gap-4 items-start">
-                  <div className="bg-white/10 backdrop-blur-sm p-3 rounded text-center min-w-[3.5rem] border border-white/20">
-                    <span className="block text-xs font-bold text-rose-200">FEB</span>
-                    <span className="block text-2xl font-bold">23</span>
-                  </div>
-                  <div>
-                    <p className="font-bold text-lg leading-tight">State Level Workshop</p>
-                    <p className="text-xs text-rose-200 mt-1">Tentative Date 1 (CM Attending)</p>
-                  </div>
-                </li>
-                <li className="flex gap-4 items-start">
-                  <div className="bg-white/10 backdrop-blur-sm p-3 rounded text-center min-w-[3.5rem] border border-white/20">
-                    <span className="block text-xs font-bold text-rose-200">MAR</span>
-                    <span className="block text-2xl font-bold">09</span>
-                  </div>
-                  <div>
-                    <p className="font-bold text-lg leading-tight">State Level Workshop</p>
-                    <p className="text-xs text-rose-200 mt-1">Tentative Date 2</p>
-                  </div>
-                </li>
-              </ul>
+                ))}
+              </div>
             </div>
 
-            <div className="bg-white p-6 rounded-sm border border-gray-200 shadow-lg">
-              <h3 className="text-lg font-bold text-gray-800 mb-4 font-serif">Downloads & Resources</h3>
-              <ul className="space-y-4">
-                <li>
-                  <a href="#" className="flex items-center gap-3 text-sm text-gray-600 hover:text-[#be123c] font-medium group transition-colors">
-                    <div className="p-2 bg-gray-100 rounded group-hover:bg-rose-50 group-hover:text-[#be123c] transition-colors">
-                      <FileText size={18} />
-                    </div>
-                    Program Brochure (PDF)
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="flex items-center gap-3 text-sm text-gray-600 hover:text-[#be123c] font-medium group transition-colors">
-                    <div className="p-2 bg-gray-100 rounded group-hover:bg-rose-50 group-hover:text-[#be123c] transition-colors">
-                      <FileText size={18} />
-                    </div>
-                    MoU Details (Official)
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="flex items-center gap-3 text-sm text-gray-600 hover:text-[#be123c] font-medium group transition-colors">
-                    <div className="p-2 bg-gray-100 rounded group-hover:bg-rose-50 group-hover:text-[#be123c] transition-colors">
-                      <Building2 size={18} />
-                    </div>
-                    Training Centers List
-                  </a>
-                </li>
-              </ul>
+            {/* Premium Resource Links */}
+            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-xl">
+              <h3 className="text-lg font-bold text-gray-900 mb-6 font-serif">Official Resources</h3>
+              <nav className="space-y-2">
+                <button
+                  onClick={() => {
+                    const pdfs = ['img/Mou IIM.pdf', 'img/Mou IIT.pdf', 'img/Mou SGSU.pdf'];
+                    pdfs.forEach((pdf, index) => {
+                      setTimeout(() => {
+                        const link = document.createElement('a');
+                        link.href = pdf;
+                        link.download = pdf.split('/').pop();
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                      }, index * 300);
+                    });
+                  }}
+                  className="w-full flex items-center gap-4 p-3 rounded-xl hover:bg-rose-50 transition-all group"
+                >
+                  <div className="p-3 bg-gray-50 rounded-lg group-hover:bg-white group-hover:text-[#be123c] text-gray-500 shadow-sm transition-all">
+                    <ShieldCheck size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-gray-800">MoU & Certifications</p>
+                    <p className="text-[10px] text-gray-400 uppercase tracking-wider">Verified @ SGSU</p>
+                  </div>
+                </button>
+                <a href="#" className="flex items-center gap-4 p-3 rounded-xl hover:bg-rose-50 transition-all group">
+                  <div className="p-3 bg-gray-50 rounded-lg group-hover:bg-white group-hover:text-[#be123c] text-gray-500 shadow-sm transition-all">
+                    <Building2 size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-gray-800">Training Modules</p>
+                    <p className="text-[10px] text-gray-400 uppercase tracking-wider">Quality & Standards</p>
+                  </div>
+                </a>
+              </nav>
             </div>
           </div>
 
@@ -464,16 +488,16 @@ const StrategicUpdates = () => {
 const MouGallery = () => {
   // Placeholder images for MoU signing
   const images = [
-    "img/image/ (1).jpeg", 
-    "img/image/ (2).jpeg", 
-    "img/image/ (3).jpeg", 
-    "img/image/ (4).jpeg", 
-    "img/image/ (5).jpeg", 
-    "img/image/ (6).jpeg", 
-    "img/image/ (7).jpeg" , 
-    "img/image/ (8).jpeg",
-      "img/image/ (9).jpeg",
-        "img/image/ (10).jpeg",
+    "img/image/a (1).jpeg",
+    "img/image/a (2).jpeg",
+    "img/image/a (3).jpeg",
+    "img/image/a (4).jpeg",
+    "img/image/a (5).jpeg",
+    "img/image/a (6).jpeg",
+    "img/image/a (7).jpeg",
+    // "img/image/a (8).jpeg",
+    // "img/image/a (9).jpeg",
+    // "img/image/a (10).jpeg",
   ];
 
   return (
@@ -511,8 +535,10 @@ const Home = () => {
       <HeroSlider />
       <NewsTicker />
 
+
       {/* Strategic Updates Section (New Content) */}
       <StrategicUpdates />
+      <MouGallery />
 
       <StatsStrip />
 
@@ -606,7 +632,7 @@ const Home = () => {
       </section>
 
       {/* Partners / MoU Gallery Section */}
-      <MouGallery />
+
 
     </div>
   );

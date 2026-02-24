@@ -55,7 +55,7 @@ const AboutProgram = () => {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl"
           >
-            Empowering Rural Women <br/>
+            Empowering Rural Women and Youth  <br/>
             <span className="text-[#fb7185] block mt-2">Through Skill & Leadership</span>
           </motion.h1>
         </div>
@@ -73,7 +73,7 @@ const AboutProgram = () => {
           >
             <span className="text-[#be123c] font-bold tracking-wider uppercase text-sm">Our Mission</span>
             <h2 className="text-3xl md:text-5xl font-bold text-[#881337] mt-3 mb-8 leading-tight">
-              Creating sustainable livelihoods for women in rural India.
+              Creating sustainable livelihoods for women and youth in rural India.
             </h2>
             <div className="w-20 h-1.5 bg-[#fb7185] rounded-full mb-8"></div>
             

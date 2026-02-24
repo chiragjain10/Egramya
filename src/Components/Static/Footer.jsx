@@ -1,82 +1,122 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-stone-900 text-white pt-16 pb-8 border-t-4 border-[#be123c]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          
-          {/* Column 1: Organization Info */}
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-xl font-bold leading-tight">Women Empowerment</h3>
-              <p className="text-sm text-stone-400 mt-1">Village Dairy Counsellors Initiative</p>
-            </div>
-            <p className="text-sm text-stone-400 leading-relaxed">
-              A collaborative initiative between GRAMYA and FIST, IIT Patna to strengthen rural women's livelihoods through structured capacity building.
+    <footer className="bg-[#0c0a09] text-white pt-20 pb-10 relative overflow-hidden">
+      {/* Decorative Accent Blur */}
+      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-[#be123c]/10 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
+
+          {/* Column 1: Brand Identity (Spans 5 cols) */}
+          <div className="lg:col-span-5 space-y-8">
+            <Link to="/" className="inline-block">
+              <img
+                src="img/logo.png"
+                alt="Gramya Logo"
+                className="h-16 w-auto brightness-0 invert"
+              />
+              <div className="mt-4">
+
+              </div>
+            </Link>
+
+            <p className="text-stone-400 text-sm leading-relaxed max-w-sm font-light">
+              A flagship collaborative initiative between <span className="text-white border-b border-stone-700">GRAMYA</span> and <span className="text-white border-b border-stone-700">FIST, IIT Patna</span>. Dedicated to empowering rural women through scientific dairy management and leadership.
             </p>
-            <div className="flex gap-4 pt-2">
-              <a href="#" className="p-2 bg-stone-800 rounded hover:bg-[#be123c] transition"><Facebook size={16} /></a>
-              <a href="#" className="p-2 bg-stone-800 rounded hover:bg-[#be123c] transition"><Twitter size={16} /></a>
-              <a href="#" className="p-2 bg-stone-800 rounded hover:bg-[#be123c] transition"><Linkedin size={16} /></a>
-              <a href="#" className="p-2 bg-stone-800 rounded hover:bg-[#be123c] transition"><Instagram size={16} /></a>
+
+            <div className="flex gap-3">
+              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, idx) => (
+                <a
+                  key={idx}
+                  href="#"
+                  className="group relative p-3 bg-stone-900/50 border border-stone-800 rounded-full hover:border-[#be123c] transition-all duration-300"
+                >
+                  <Icon size={18} className="text-stone-400 group-hover:text-[#be123c] transition-colors" />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div>
-            <h4 className="text-lg font-bold mb-6 border-b border-stone-800 pb-2 inline-block">Quick Links</h4>
-            <ul className="space-y-3 text-sm text-stone-400">
-              <li><Link to="/" className="hover:text-[#be123c] transition">Home</Link></li>
-              <li><Link to="/about" className="hover:text-[#be123c] transition">About the Program</Link></li>
-              <li><Link to="/structure" className="hover:text-[#be123c] transition">Course Structure</Link></li>
-              <li><Link to="/gallery" className="hover:text-[#be123c] transition">Gallery</Link></li>
-              <li><Link to="/enroll" className="hover:text-[#be123c] transition">Apply Online</Link></li>
+          {/* Column 2: Navigation (Spans 3 cols) */}
+          <div className="lg:col-span-3">
+            <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-[#be123c] mb-8">Navigation</h4>
+            <ul className="space-y-4">
+              {[
+                { label: 'Home', path: '/' },
+                { label: 'About us', path: '/about' },
+                { label: 'Programs', path: '/structure' },
+                { label: 'Gallery', path: '/gallery' },
+                { label: 'Enroll Now', path: '/enroll' },
+              ].map(({ label, path }) => (
+                <li key={label}>
+                  <Link
+                    to={path}
+                    className="group flex items-center text-stone-400 hover:text-white transition-colors text-sm"
+                  >
+                    <ArrowRight
+                      size={14}
+                      className="mr-0 opacity-0 group-hover:mr-2 group-hover:opacity-100 transition-all text-[#be123c]"
+                    />
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 3: Contact Info */}
-          <div className="lg:col-span-2">
-            <h4 className="text-lg font-bold mb-6 border-b border-stone-800 pb-2 inline-block">Contact Information</h4>
-            <div className="space-y-4 text-sm text-stone-400">
-              <div className="flex items-start gap-3">
-                <MapPin className="text-[#be123c] shrink-0 mt-1" size={18} />
-                <div>
-                  <p className="font-bold text-white">Absolute Gramya Private Limited</p>
-                  <p>Bhopal, Madhya Pradesh</p>
+          {/* Column 3: Contact (Spans 4 cols) */}
+          <div className="lg:col-span-4 space-y-8">
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-[#be123c] mb-8">Inquiries</h4>
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 shrink-0 bg-[#be123c]/10 flex items-center justify-center rounded-lg border border-[#be123c]/20">
+                    <MapPin size={18} className="text-[#be123c]" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-stone-500 uppercase tracking-tighter mb-1">Location</p>
+                    <p className="text-sm text-stone-200">Absolute Gramya Private Limited,<br />Bhopal, Madhya Pradesh</p>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <Mail className="text-[#be123c] shrink-0 mt-1" size={18} />
-                <div>
-                  <p className="font-bold text-white">Dr. Pankaj Shukla</p>
-                  <p className="text-xs text-stone-500">Chairman & Managing Director</p>
-                  <a href="mailto:chairman@absolutegramya.com" className="hover:text-white transition">chairman@absolutegramya.com</a>
-                </div>
-              </div>
 
-              <div className="bg-stone-800/50 p-4 rounded-lg border border-stone-800 mt-4">
-                <p className="text-xs text-stone-500 mb-1 uppercase tracking-wider font-bold">Key Partners</p>
-                <div className="flex items-center gap-4">
-                  <span className="font-bold text-white">FIST, IIT Patna</span>
-                  <span className="w-1 h-1 bg-[#be123c] rounded-full"></span>
-                  <span className="font-bold text-white">GRAMYA</span>
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 shrink-0 bg-[#be123c]/10 flex items-center justify-center rounded-lg border border-[#be123c]/20">
+                    <Mail size={18} className="text-[#be123c]" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-stone-500 uppercase tracking-tighter mb-1">Direct Contact</p>
+                    <p className="text-sm text-stone-200 font-medium">Dr. Pankaj Shukla</p>
+                    <a href="mailto:chairman@absolutegramya.com" className="text-xs text-[#be123c] hover:underline">chairman@absolutegramya.com</a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
+            {/* Partner Badge */}
+            <div className="p-4 bg-gradient-to-br from-stone-900 to-black border border-stone-800 rounded-xl">
+              <p className="text-[10px] text-stone-500 uppercase tracking-[0.2em] mb-3">Institutional Partners</p>
+              <div className="flex items-center gap-3">
+                <span className="text-xs font-bold text-white tracking-tight">FIST, IIT PATNA</span>
+                <div className="h-3 w-[1px] bg-stone-700" />
+                <span className="text-xs font-bold text-white tracking-tight">GRAMYA</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stone-500">
-          <p>&copy; 2026 Village Dairy Counsellors Programme. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white">Privacy Policy</a>
-            <a href="#" className="hover:text-white">Terms of Use</a>
+        <div className="pt-8 border-t border-stone-800/60 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[11px] text-stone-500 font-light tracking-wide">
+            &copy; 2026 Village Dairy Counsellors Programme. <span className="hidden md:inline">|</span> Designed for Rural Excellence.
+          </p>
+          <div className="flex gap-8 text-[11px] uppercase tracking-widest">
+            <a href="#" className="text-stone-500 hover:text-[#be123c] transition-colors">Privacy</a>
+            <a href="#" className="text-stone-500 hover:text-[#be123c] transition-colors">Terms</a>
+            <a href="#" className="text-stone-500 hover:text-[#be123c] transition-colors">Cookies</a>
           </div>
         </div>
       </div>

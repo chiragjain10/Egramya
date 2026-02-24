@@ -2,18 +2,23 @@ import React from "react";
 import { motion } from "framer-motion";
 import { 
   ChevronRight, 
-  ArrowRight, 
-  Dna, 
+  Globe, 
+  Award, 
+  Users, 
+  TrendingUp, 
   ShieldCheck, 
-  Warehouse, 
-  Sprout, 
-  Clock, 
   BookOpen, 
   Target,
-  FlaskConical 
+  Sprout,
+  FlaskConical,
+  Zap,
+  Heart,
+  Briefcase,
+  Layers,
+  CheckCircle2,
+  MapPin
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import SEO from "../SEO";
 
 // --- Animation Variants ---
 const fadeInUp = {
@@ -34,260 +39,259 @@ const stagger = {
 };
 
 // --- Sub-Components ---
-const TopicCard = ({ code, title, description, items, practical, duration, outcome, icon: Icon }) => (
+const TopicCard = ({ code, title, items, icon: Icon }) => (
   <motion.div 
     variants={fadeInUp}
-    className="group relative bg-white rounded-[2.5rem] p-10 border border-rose-100 shadow-sm hover:shadow-2xl hover:shadow-rose-100/50 transition-all duration-500 flex flex-col h-full"
+    className="group bg-white rounded-[2rem] p-8 border border-rose-100 shadow-sm hover:shadow-xl transition-all duration-500"
   >
-    {/* Large Background Decorative Number */}
-    <span className="absolute top-4 right-8 text-8xl font-bold text-rose-50 opacity-40 select-none group-hover:opacity-70 transition-opacity">
-      {code.split('.')[1]}
-    </span>
-
-    <div className="relative z-10">
-      <div className="flex items-center gap-4 mb-8">
-        <div className="p-4 bg-[#fff1f2] rounded-2xl text-[#be123c] group-hover:bg-[#be123c] group-hover:text-white transition-all duration-300">
-          <Icon size={26} strokeWidth={1.5} />
-        </div>
-        <div>
-          <span className="text-[#be123c] font-bold tracking-widest text-[10px] uppercase block">Chapter {code}</span>
-          <h3 className="text-2xl font-bold text-[#881337] leading-tight">{title}</h3>
-        </div>
+    <div className="flex items-center gap-4 mb-6">
+      <div className="p-3 bg-[#fff1f2] rounded-xl text-[#be123c] group-hover:bg-[#be123c] group-hover:text-white transition-all">
+        <Icon size={22} />
       </div>
-
-      <p className="text-gray-600 text-sm leading-relaxed mb-6">{description}</p>
-
-      {/* Topics List */}
-      <div className="space-y-4 mb-8">
-        <div className="text-[10px] uppercase tracking-wider text-rose-400 font-bold">Theoretical Focus</div>
-        {items.map((item, idx) => (
-          <div key={idx} className="flex items-start gap-3 text-gray-700 text-sm">
-            <div className="w-1.5 h-1.5 mt-1.5 rounded-full bg-[#fb7185] shrink-0" />
-            <span className="font-medium">{item}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* Practical Section */}
-      {practical && practical.length > 0 && (
-        <div className="mb-8 p-6 bg-[#fff1f2]/50 rounded-2xl border border-rose-50">
-          <div className="flex items-center gap-2 mb-4">
-            <FlaskConical size={14} className="text-[#be123c]" />
-            <span className="text-[10px] uppercase tracking-wider text-[#be123c] font-bold">Practical Exposure</span>
-          </div>
-          <div className="grid grid-cols-1 gap-2">
-            {practical.map((item, idx) => (
-              <span key={idx} className="text-xs text-gray-600 flex items-center gap-2">
-                • {item}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Outcome */}
-      <div className="pt-6 border-t border-rose-100 mt-auto">
-        <div className="flex items-start gap-3">
-          <div className="p-2 bg-rose-50 rounded-lg">
-             <Target size={16} className="text-[#be123c]" />
-          </div>
-          <p className="text-xs font-semibold text-[#881337] leading-relaxed">
-            <span className="text-rose-400 uppercase tracking-widest text-[9px] block mb-1">Learning Outcome</span>
-            {outcome}
-          </p>
-        </div>
-      </div>
+      <h3 className="text-xl font-bold text-[#881337]">{title}</h3>
     </div>
+    <ul className="space-y-3">
+      {items.map((item, idx) => (
+        <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
+          <div className="w-1.5 h-1.5 mt-1.5 rounded-full bg-rose-300 shrink-0" />
+          {item}
+        </li>
+      ))}
+    </ul>
   </motion.div>
 );
 
-const StatPill = ({ icon: Icon, label, value }) => (
-  <div className="flex items-center gap-4 p-5 bg-white rounded-2xl border border-rose-50 shadow-sm">
-    <div className="w-12 h-12 bg-[#fff1f2] rounded-xl flex items-center justify-center text-[#be123c]">
-      <Icon size={24} />
-    </div>
-    <div>
-      <div className="text-[10px] uppercase tracking-widest text-rose-400 font-bold mb-0.5">{label}</div>
-      <div className="text-[#881337] font-bold text-lg">{value}</div>
-    </div>
-  </div>
-);
-
-const ModuleOnePage = () => {
+const ProgramPage = () => {
   return (
-    <div className="min-h-screen bg-[#fff1f2] font-sans selection:bg-[#be123c]/20">
-      <SEO 
-        title="Module 1: Dairy Farming Basics" 
-        description="Foundation module of VDC program. Learn about cattle breeds, hygiene, and nutrition."
-        keywords="Dairy Farming, Animal Husbandry, Rural Skills"
-      />
+    <div className="min-h-screen bg-[#fffcfc] font-sans selection:bg-[#be123c]/20">
       
-      {/* ================= 1. PREMIUM HEADER ================= */}
-      <header className="relative h-[55vh] min-h-[500px] overflow-hidden">
-        <div className="absolute inset-0">
+      {/* 1. HERO SECTION */}
+      <header className="relative h-[70vh] min-h-[600px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1599059813005-11265ba4b4ce" 
+            src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?auto=format&fit=crop&q=80" 
             className="w-full h-full object-cover"
-            alt="Scientific Dairy Farming"
+            alt="Rural Dairy Farming"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#881337]/90 via-[#881337]/40 to-[#fff1f2]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#881337] via-[#881337]/80 to-transparent" />
         </div>
 
-        <div className="relative h-full max-w-7xl mx-auto px-6 flex flex-col justify-center pt-20">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-2 text-white/80 text-xs font-bold tracking-widest uppercase mb-6"
-          >
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
-            <ChevronRight size={12} />
-            <Link to="/programs" className="hover:text-white transition-colors">Programs</Link>
-            <ChevronRight size={12} />
-            <span className="text-rose-200">Module 01</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+          <motion.div initial="hidden" animate="show" variants={stagger} className="max-w-3xl">
+            <motion.span variants={fadeInUp} className="inline-block px-4 py-1 rounded-full bg-rose-500/20 text-rose-200 text-xs font-bold tracking-[0.3em] uppercase mb-6 border border-rose-500/30">
+              Madhya Pradesh Initiative
+            </motion.span>
+            <motion.h1 variants={fadeInUp} className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-[1.1]">
+              Village Dairy <br/>
+              <span className="text-rose-400 italic">Counsellors</span>
+            </motion.h1>
+            <motion.p variants={fadeInUp} className="text-lg text-rose-100/80 leading-relaxed mb-8">
+              Empowering rural communities through structured capacity building, 
+              scientific guidance, and market-driven transformation of the dairy sector.
+            </motion.p>
+            <motion.div variants={fadeInUp} className="flex gap-4">
+              <button className="px-8 py-4 bg-[#be123c] text-white rounded-full font-bold hover:bg-[#881337] transition-all shadow-lg shadow-rose-900/20">
+                Enroll in Program
+              </button>
+              <button className="px-8 py-4 bg-white/10 text-white backdrop-blur-md border border-white/20 rounded-full font-bold hover:bg-white/20 transition-all">
+                Download Brochure
+              </button>
+            </motion.div>
           </motion.div>
-
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl lg:text-7xl font-bold text-white leading-tight"
-          >
-            Scientific <br/>
-            <span className="text-[#fb7185] italic font-light">Dairy Farming</span>
-          </motion.h1>
         </div>
       </header>
 
-      {/* ================= 2. CONTEXT SECTION ================= */}
-      <section className="relative -mt-20 z-10 px-6 max-w-7xl mx-auto mb-24">
-        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="lg:col-span-7 bg-white rounded-[3rem] p-10 lg:p-14 shadow-2xl shadow-rose-900/5 border border-rose-100 flex flex-col justify-center"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-[#fff1f2] text-[#be123c] text-[10px] font-bold tracking-widest uppercase mb-8 w-fit">
-              Technical Foundation
-            </span>
-            <h2 className="text-2xl md:text-3xl text-gray-700 leading-relaxed font-medium mb-10">
-              This module builds <span className="text-[#881337] font-bold">technical competence</span> in high-yield animal management, milk safety, and disease prevention.
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <StatPill icon={Clock} label="Course Duration" value="4 Weeks" />
-              <StatPill icon={BookOpen} label="Learning Mode" value="Hybrid" />
+      {/* 2. RELEVANCE & CONTEXT */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeInUp}>
+            <h2 className="text-sm font-bold tracking-[0.3em] text-[#be123c] uppercase mb-4">The Relevance</h2>
+            <h3 className="text-4xl font-bold text-[#881337] mb-6 leading-tight">Bridging the Gap in Madhya Pradesh's Dairy Sector</h3>
+            <div className="space-y-4 text-gray-600 leading-relaxed">
+              <p>Despite significant contributions to the economy, the dairy sector faces challenges like low milk yield and limited market info. VDCs act as a dedicated cadre of professionals providing grassroots support.</p>
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                <div className="p-4 bg-rose-50 rounded-2xl border border-rose-100">
+                  <TrendingUp className="text-[#be123c] mb-2" />
+                  <p className="text-sm font-bold text-[#881337]">Improved Productivity</p>
+                </div>
+                <div className="p-4 bg-rose-50 rounded-2xl border border-rose-100">
+                  <ShieldCheck className="text-[#be123c] mb-2" />
+                  <p className="text-sm font-bold text-[#881337]">Quality Assurance</p>
+                </div>
+              </div>
             </div>
           </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="lg:col-span-5 relative rounded-[3rem] overflow-hidden shadow-xl"
-          >
-            <img 
-              src="https://images.unsplash.com/photo-1500595046743-cd271d694d30" 
-              className="w-full h-full object-cover" 
-              alt="Hands-on training" 
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#881337]/80 to-transparent" />
-            <div className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
-              <p className="text-rose-200 text-[10px] font-bold uppercase tracking-widest mb-1">Core Objective</p>
-              <p className="text-white font-bold text-xl">Farm-Level Advisory Mastery</p>
+          <div className="relative">
+            <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&q=80" className="rounded-[3rem] shadow-2xl" alt="Community Engagement" />
+            <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-[2rem] shadow-xl border border-rose-100 max-w-xs">
+              <p className="text-[#be123c] font-bold text-3xl mb-1">5,000</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-gray-500">VDCs to be trained across Panchayats</p>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ================= 3. CURRICULUM GRID ================= */}
-      <section className="max-w-7xl mx-auto px-6 pb-32">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-rose-100 pb-8">
-          <div>
-            <span className="text-[#be123c] font-bold tracking-widest text-xs uppercase mb-3 block">Full Syllabus</span>
-            <h2 className="text-4xl font-bold text-[#881337]">Curriculum Breakdown</h2>
           </div>
-          <div className="w-24 h-1 bg-[#fb7185] rounded-full hidden md:block mb-4"></div>
-        </div>
-
-        <motion.div 
-          variants={stagger}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8"
-        >
-          <TopicCard 
-            code="1.1"
-            icon={Warehouse}
-            title="Animal Husbandry"
-            description="Selection of suitable cattle based on local climate, housing design, and welfare to ensure higher productivity."
-            items={[
-              "Indigenous vs Crossbred breeds",
-              "Climate-resilient breed selection",
-              "Scientific housing design"
-            ]}
-            practical={["Body scoring", "Layout planning"]}
-            outcome="VDC can advise on infrastructure and breed selection."
-          />
-
-          <TopicCard 
-            code="1.2"
-            icon={Sprout}
-            title="Nutrition Management"
-            description="Balanced feeding practices and ration formulation using locally available resources for yield optimization."
-            items={[
-              "Ruminant digestion principles",
-              "Ration balancing for lactation",
-              "Feed cost optimization"
-            ]}
-            practical={["Feed mixing", "Ration worksheets"]}
-            outcome="VDC can reduce feed costs by up to 15%."
-          />
-
-          <TopicCard 
-            code="1.3"
-            icon={Dna}
-            title="Reproduction & Genetics"
-            description="Advanced heat detection and breeding cycles to reduce calving intervals and enhance long-term genetics."
-            items={[
-              "Breeding cycle management",
-              "AI concepts & equipment",
-              "Reproductive health"
-            ]}
-            practical={["AI demo", "Calving management"]}
-            outcome="Ensures better offspring and consistent milk flow."
-          />
-
-          <TopicCard 
-            code="1.4"
-            icon={ShieldCheck}
-            title="Disease & Hygiene"
-            description="Vaccination schedules and clean milk production standards to ensure product quality and herd health."
-            items={[
-              "Common disease identification",
-              "Vaccination protocols",
-              "Hygienic milking methods"
-            ]}
-            practical={["Milk testing", "First aid kits"]}
-            outcome="VDC acts as the primary health advisor."
-          />
-        </motion.div>
-
-        {/* ================= 4. NAVIGATION ================= */}
-        <div className="mt-24 flex justify-between items-center bg-white p-8 rounded-[2.5rem] border border-rose-100 shadow-sm">
-          <Link to="/programs" className="text-gray-400 hover:text-[#be123c] font-bold text-xs uppercase tracking-widest transition-colors flex items-center gap-2">
-            <ChevronRight className="rotate-180" size={16} /> Back to Overview
-          </Link>
-          
-          <Link to="/module-2" className="group flex items-center gap-4 text-[#881337]">
-            <span className="text-sm font-bold tracking-widest uppercase">Next: Module 02</span>
-            <div className="w-12 h-12 rounded-full bg-[#881337] text-white flex items-center justify-center group-hover:bg-[#be123c] group-hover:translate-x-2 transition-all">
-              <ArrowRight size={20} />
-            </div>
-          </Link>
         </div>
       </section>
+
+      {/* 3. GLOBAL & NATIONAL BEST PRACTICES */}
+      <section className="py-24 bg-stone-900 text-white overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-rose-400 font-bold tracking-[0.3em] uppercase text-sm mb-4">Benchmarking Excellence</h2>
+            <h3 className="text-4xl font-bold">International & National Perspectives</h3>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Practice 1 */}
+            <div className="p-8 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-all">
+              <Globe className="text-rose-400 mb-6" size={32} />
+              <h4 className="text-xl font-bold mb-4">International Extension</h4>
+              <p className="text-sm text-stone-400 leading-relaxed">Inspired by the US Cooperative Extension, Australia's RIRDC, and NZ's DairyNZ to ensure sustainability and research-backed advisory.</p>
+            </div>
+            {/* Practice 2 */}
+            <div className="p-8 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-all">
+              <Zap className="text-rose-400 mb-6" size={32} />
+              <h4 className="text-xl font-bold mb-4">Digital Agriculture</h4>
+              <p className="text-sm text-stone-400 leading-relaxed">Adapting Israel's precision dairy farming techniques using data analytics to optimize farm-level production.</p>
+            </div>
+            {/* Practice 3 */}
+            <div className="p-8 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-all">
+              <Award className="text-rose-400 mb-6" size={32} />
+              <h4 className="text-xl font-bold mb-4">National Best Practices</h4>
+              <p className="text-sm text-stone-400 leading-relaxed">Implementing Integrated Farming Systems (IFS), High-yielding breeds (Holstein Friesian), and Artificial Insemination (AI).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. THE CURRICULUM GRID */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+          <div>
+            <h2 className="text-[#be123c] font-bold tracking-[0.3em] uppercase text-sm mb-4">Training Structure</h2>
+            <h3 className="text-4xl font-bold text-[#881337]">Course Curriculum</h3>
+          </div>
+          <p className="text-gray-500 max-w-sm text-sm mt-4 md:mt-0">A comprehensive 5-module program designed in association with IIT Patna.</p>
+        </div>
+
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <TopicCard 
+            title="Introduction to Dairy" 
+            icon={BookOpen}
+            items={["Anatomy & Physiology", "Farm Management", "Record-keeping", "Layout & Infrastructure"]} 
+          />
+          <TopicCard 
+            title="Animal Nutrition" 
+            icon={Sprout}
+            items={["Nutrient Requirements", "Ration Balancing", "Feed Formulation", "Storage & Preservation"]} 
+          />
+          <TopicCard 
+            title="Reproduction" 
+            icon={FlaskConical}
+            items={["Breeding Methods", "Artificial Insemination", "Pregnancy Management", "Synchronization"]} 
+          />
+          <TopicCard 
+            title="Health Management" 
+            icon={ShieldCheck}
+            items={["Disease Prevention", "Vaccination Schedules", "Deworming", "First Aid for Cattle"]} 
+          />
+          <TopicCard 
+            title="Milk Quality" 
+            icon={CheckCircle2}
+            items={["Hygienic Handling", "Value Addition (Ghee/Paneer)", "Market Linkages", "Quality Standards"]} 
+          />
+          <div className="bg-[#be123c] rounded-[2rem] p-8 text-white flex flex-col justify-center">
+            <h4 className="text-2xl font-bold mb-4">Target Group</h4>
+            <ul className="space-y-3 text-rose-100 text-sm">
+              <li className="flex gap-2"> <ChevronRight size={16}/> Min 10th Grade Pass</li>
+              <li className="flex gap-2"> <ChevronRight size={16}/> Rural Background</li>
+              <li className="flex gap-2"> <ChevronRight size={16}/> Local Language Fluency</li>
+            </ul>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* 5. WOMEN EMPOWERMENT SECTION */}
+      <section className="py-24 bg-rose-50">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <Heart className="text-[#be123c] mx-auto mb-6" size={48} />
+          <h3 className="text-4xl font-bold text-[#881337] mb-8">Role in Women Empowerment</h3>
+          <div className="grid md:grid-cols-3 gap-12 text-left">
+            <div className="space-y-4">
+              <h4 className="text-xl font-bold text-[#be123c]">Economic Independence</h4>
+              <p className="text-sm text-gray-600">Improving productivity to ensure women have direct control over finances and decision-making.</p>
+            </div>
+            <div className="space-y-4">
+              <h4 className="text-xl font-bold text-[#be123c]">Social Voice</h4>
+              <p className="text-sm text-gray-600">Facilitating participation in SHGs and cooperatives to strengthen their voice in local affairs.</p>
+            </div>
+            <div className="space-y-4">
+              <h4 className="text-xl font-bold text-[#be123c]">Leadership</h4>
+              <p className="text-sm text-gray-600">Identifying and supporting women leaders to advocate for the interests of rural farmers.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. PROJECT MANAGEMENT UNIT (ABSOLUTE GRAMYA) */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="bg-white border border-stone-200 rounded-[3rem] p-12 shadow-sm overflow-hidden relative">
+          <div className="absolute top-0 right-0 p-12 opacity-5">
+            <Briefcase size={200} />
+          </div>
+          
+          <div className="relative z-10">
+            <h3 className="text-3xl font-bold text-stone-900 mb-8">Absolute Gramya <span className="text-[#be123c]">PMU Role</span></h3>
+            <div className="grid md:grid-cols-2 gap-12">
+              <ul className="space-y-6">
+                <li className="flex gap-4">
+                  <div className="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center shrink-0 text-[#be123c] font-bold">1</div>
+                  <div>
+                    <h5 className="font-bold text-stone-800">Planning & Coordination</h5>
+                    <p className="text-sm text-gray-500">Managing budget, timelines, and multi-stakeholder engagement with Govt/NGOs.</p>
+                  </div>
+                </li>
+                <li className="flex gap-4">
+                  <div className="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center shrink-0 text-[#be123c] font-bold">2</div>
+                  <div>
+                    <h5 className="font-bold text-stone-800">Support & Mentoring</h5>
+                    <p className="text-sm text-gray-500">Pairing experienced VDCs with newcomers for knowledge sharing and business planning.</p>
+                  </div>
+                </li>
+              </ul>
+              <ul className="space-y-6">
+                <li className="flex gap-4">
+                  <div className="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center shrink-0 text-[#be123c] font-bold">3</div>
+                  <div>
+                    <h5 className="font-bold text-stone-800">M&E Framework</h5>
+                    <p className="text-sm text-gray-500">Tracking milk production increases and farmer income growth through data analytics.</p>
+                  </div>
+                </li>
+                <li className="flex gap-4">
+                  <div className="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center shrink-0 text-[#be123c] font-bold">4</div>
+                  <div>
+                    <h5 className="font-bold text-stone-800">Sustainability</h5>
+                    <p className="text-sm text-gray-500">Exploring revenue streams like consultancy and training fees for long-term VDC viability.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. FINAL CTA */}
+      <section className="pb-24 px-6">
+        <div className="max-w-5xl mx-auto bg-[#881337] rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10" />
+          <h3 className="text-4xl font-bold mb-6 relative z-10">Ready to Transform Rural Dairy?</h3>
+          <p className="text-rose-200 mb-10 max-w-2xl mx-auto relative z-10">Join a network of 5,000 professionals driving the sustainable development of Madhya Pradesh's dairy industry.</p>
+          <button className="px-12 py-5 bg-white text-[#881337] rounded-full font-bold text-lg hover:scale-105 transition-transform relative z-10">
+            Apply as VDC Candidate
+          </button>
+        </div>
+      </section>
+
     </div>
   );
 };
 
-export default ModuleOnePage;
+export default ProgramPage;
