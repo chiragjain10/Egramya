@@ -83,7 +83,7 @@ const Header = () => {
             {/* Dropdown with better UX */}
             <div className="relative group">
               <button className="flex items-center gap-1 text-sm font-semibold text-gray-600 group-hover:text-[#be123c] transition-colors py-2">
-                Modules <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
+                Courses <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
               </button>
               
               <div className="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
