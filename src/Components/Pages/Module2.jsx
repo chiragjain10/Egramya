@@ -30,7 +30,7 @@ const AnnapurnaPage = () => {
       <header className="relative h-[80vh] flex items-center overflow-hidden bg-[#0a2e1f]">
         <div className="absolute inset-0 opacity-40">
           <img 
-            src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&q=80" 
+            src="img/image/ (10).jpeg" 
             className="w-full h-full object-cover"
             alt="Indian Rural Woman in Farm"
           />
