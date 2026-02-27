@@ -163,7 +163,11 @@ const Header = () => {
                     {isModuleOpen && (
                       <div className="pl-4 flex flex-col gap-3 text-base font-medium text-gray-500 border-l-2 border-rose-100">
                         <Link to="/module-1" onClick={() => setIsMobileMenuOpen(false)}>⁠Village Counsellor and Shakti Programme</Link>
-                        <Link to="/module-2" onClick={() => setIsMobileMenuOpen(false)}>Module 2</Link>
+                        <Link to="/module-2" onClick={() => setIsMobileMenuOpen(false)}>Annapurna - Women in Agriculture</Link>
+                        <Link to="/module-3" onClick={() => setIsMobileMenuOpen(false)}>Entrepreneurship</Link>
+                          <Link to="/module-4" onClick={() => setIsMobileMenuOpen(false)}>⁠Marketing Skills</Link>
+                          <Link to="/module-5" onClick={() => setIsMobileMenuOpen(false)}>⁠IT and AI</Link>
+                          <Link to="/module-6" onClick={() => setIsMobileMenuOpen(false)}>⁠Financial Enclosure</Link>
                         {/* <Link to="/module-3" onClick={() => setIsMobileMenuOpen(false)}>Module 3</Link> */}
                       </div>
                     )}
