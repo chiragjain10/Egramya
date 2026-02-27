@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-
+import ConstructionPage from "./Components/Pages/NotFound";
 import "./App.css";
 import ScrollToTop from "./Components/Scroll";
 import Header from "./Components/Static/Header";
@@ -40,7 +40,8 @@ function App() {
           <Route path="/enroll" element={<EnrollPage />} />
           <Route path="/module-1" element={<ModuleOnePage />} />
           <Route path="/module-2" element={<ModuleTwoPage />} />
-          <Route path="/module-3" element={<ModuleThreePage />} />
+          {/* <Route path="/module-3" element={<ModuleThreePage />} /> */}
+          <Route path="*" element={<ConstructionPage />} />
         </Routes>
 
         <Footer />

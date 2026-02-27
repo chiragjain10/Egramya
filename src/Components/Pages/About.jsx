@@ -28,38 +28,66 @@ const AboutProgram = () => {
       />
       
       {/* ================= 1. HERO HEADER ================= */}
-      <header className="relative h-[60vh] min-h-[500px] overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=2070&auto=format&fit=crop" 
-            className="w-full h-full object-cover"
-            alt="Rural empowerment"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#881337]/70 via-[#881337]/40 to-[#fff1f2]" />
-        </div>
+      <header className="relative h-[60vh] min-h-[500px] overflow-hidden bg-[#fff1f2]">
 
-        <div className="relative h-full max-w-7xl mx-auto px-6 flex flex-col justify-center pt-20">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-2 text-white/90 text-xs font-bold tracking-widest uppercase mb-6"
-          >
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
-            <ChevronRight size={12} />
-            <span className="text-rose-200">About Initiative</span>
-          </motion.div>
+  {/* IMAGE */}
+  <div className="absolute inset-0">
+    <img
+      src="img/image/ (1).jpeg"
+      alt="Rural empowerment"
+      className="w-full h-full object-cover object-center"
+    />
 
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl"
-          >
-            Empowering Rural Women and Youth  <br/>
-            <span className="text-[#fb7185] block mt-2">Through Skill & Leadership</span>
-          </motion.h1>
-        </div>
-      </header>
+    {/* LIGHT OVERLAY FOR VISIBILITY */}
+    <div className="absolute inset-0 bg-white/60" />
+
+    {/* SOFT BOTTOM GRADIENT */}
+    <div className="absolute inset-0 bg-gradient-to-t from-[#fff1f2] via-transparent to-transparent" />
+  </div>
+
+  {/* CONTENT */}
+  <div className="relative h-full max-w-7xl mx-auto px-6 flex flex-col justify-center pt-24">
+
+    {/* BREADCRUMB */}
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#881337] mb-6"
+    >
+      <Link to="/" className="hover:underline">
+        Home
+      </Link>
+      <ChevronRight size={12} />
+      <span className="text-[#be123c]">About Initiative</span>
+    </motion.div>
+
+    {/* TITLE */}
+    <motion.h1
+      initial={{ opacity: 0, y: 25 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-4xl md:text-6xl font-extrabold text-[#881337] leading-tight max-w-4xl"
+    >
+      Empowering Rural Women and Youth
+      <span className="block mt-3 text-xl md:text-2xl font-medium text-[#be123c]">
+        Through Skill & Leadership
+      </span>
+    </motion.h1>
+
+    {/* SUBTEXT (Optional but recommended) */}
+    <motion.p
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2, duration: 0.7 }}
+      className="mt-6 max-w-2xl text-gray-700 text-lg leading-relaxed"
+    >
+      Creating inclusive pathways for sustainable livelihoods by nurturing skills,
+      confidence, and leadership at the grassroots level.
+    </motion.p>
+
+  </div>
+</header>
 
       {/* ================= 2. MISSION & VISION ================= */}
       <section className="py-24 max-w-7xl mx-auto px-6">

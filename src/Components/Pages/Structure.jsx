@@ -2,16 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import SEO from "../SEO";
-import { 
-  ChevronRight, 
-  CheckCircle2, 
-  Stethoscope, 
-  TrendingUp, 
-  Users2 
+import {
+  ChevronRight,
+  CheckCircle2,
+  Stethoscope,
+  TrendingUp,
+  Users2
 } from "lucide-react";
 // --- Sub-Components ---
 const ModuleSummaryCard = ({ weekRange, type, title, description, skills, icon: Icon, delay }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -20,7 +20,7 @@ const ModuleSummaryCard = ({ weekRange, type, title, description, skills, icon: 
   >
     {/* Decorative Background Icon */}
     <Icon className="absolute -right-8 -top-8 text-rose-50 opacity-[0.2] group-hover:scale-110 transition-transform duration-700" size={200} />
-    
+
     <div className="relative z-10">
       <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
         <div className="flex items-center gap-4">
@@ -58,43 +58,86 @@ const ModuleSummaryCard = ({ weekRange, type, title, description, skills, icon: 
 const ProgramStructurePage = () => {
   return (
     <div className="min-h-screen bg-[#fff1f2] font-sans selection:bg-[#be123c]/20">
-      <SEO 
-        title="Program Structure" 
+      <SEO
+        title="Program Structure"
         description="Explore the 3-month comprehensive curriculum of the Village Dairy Counsellors program."
         keywords="VDC Curriculum, Dairy Training, Women Leadership Training"
       />
-      
+
       {/* ================= 1. HERO HEADER ================= */}
-      <header className="relative h-[50vh] min-h-[450px] overflow-hidden">
+      <header className="relative h-[55vh] min-h-[480px] overflow-hidden bg-[#fff1f2]">
+
+        {/* IMAGE */}
         <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2069&auto=format&fit=crop" 
-            className="w-full h-full object-cover"
-            alt="Training program"
+          <img
+            src="img/image/ (2).jpeg"
+            alt="Training Program"
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#881337]/80 via-[#881337]/50 to-[#fff1f2]" />
+
+          {/* LIGHT OVERLAY for readability (NOT dark) */}
+          <div className="absolute inset-0 bg-white/60" />
+
+          {/* Soft bottom gradient for separation */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#fff1f2] via-transparent to-transparent" />
         </div>
 
-        <div className="relative h-full max-w-7xl mx-auto px-6 flex flex-col justify-center pt-20">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-2 text-white/90 text-xs font-bold tracking-widest uppercase mb-6"
+        {/* CONTENT */}
+        <div className="relative h-full max-w-7xl mx-auto px-6 flex flex-col justify-center pt-24">
+
+          {/* Breadcrumb */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#881337] mb-6"
           >
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <Link to="/" className="hover:underline">
+              Home
+            </Link>
             <ChevronRight size={12} />
-            <span className="text-rose-200">Our Programs</span>
+            <span className="text-[#be123c]">Our Programs</span>
           </motion.div>
 
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
+          {/* Title */}
+          <motion.h1
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            className="text-4xl md:text-6xl font-extrabold text-[#881337] leading-tight max-w-4xl"
           >
-            Learning Journey <br/>
-            <span className="text-[#fb7185] block mt-2 text-2xl md:text-3xl font-light">A 3-Month Transformational Path</span>
+            Learning Journey
+            <span className="block mt-3 text-xl md:text-2xl font-medium text-[#be123c]">
+              A 3-Month Transformational Path
+            </span>
           </motion.h1>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.7 }}
+            className="mt-6 max-w-2xl text-gray-700 text-lg leading-relaxed"
+          >
+            A structured, hands-on training program designed to build real-world skills,
+            leadership, and professional readiness through guided learning and field exposure.
+          </motion.p>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.7 }}
+            className="mt-8 flex gap-5 flex-wrap"
+          >
+            <button className="px-8 py-4 bg-[#881337] text-white rounded-full font-bold shadow-lg hover:bg-[#6d0f2a] transition">
+              View Curriculum
+            </button>
+            <button className="px-8 py-4 bg-white border border-[#881337]/20 text-[#881337] rounded-full font-bold hover:bg-[#fff1f2] transition">
+              Download Brochure
+            </button>
+          </motion.div>
+
         </div>
       </header>
 
@@ -107,7 +150,7 @@ const ProgramStructurePage = () => {
         </div>
 
         <div className="flex flex-col gap-10">
-          <ModuleSummaryCard 
+          <ModuleSummaryCard
             weekRange="Weeks 1-2"
             type="Foundation"
             title="Scientific Dairy Farming"
@@ -117,7 +160,7 @@ const ProgramStructurePage = () => {
             delay={0.1}
           />
 
-          <ModuleSummaryCard 
+          <ModuleSummaryCard
             weekRange="Weeks 3-4"
             type="Growth"
             title="Rural Entrepreneurship"
@@ -127,7 +170,7 @@ const ProgramStructurePage = () => {
             delay={0.2}
           />
 
-          <ModuleSummaryCard 
+          <ModuleSummaryCard
             weekRange="Weeks 5-6"
             type="Leadership"
             title="Community Leadership"
@@ -139,7 +182,7 @@ const ProgramStructurePage = () => {
         </div>
 
         {/* ================= 3. CALL TO ACTION ================= */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className="mt-20 p-12 bg-[#881337] rounded-[3rem] text-center text-white relative overflow-hidden"
@@ -147,8 +190,8 @@ const ProgramStructurePage = () => {
           <div className="relative z-10">
             <h3 className="text-3xl font-bold mb-4">Ready to start your journey?</h3>
             <p className="text-rose-100 mb-8 max-w-xl mx-auto">Join hundreds of women who have transformed their lives through our Village Dairy Counsellor program.</p>
-            <Link 
-              to="/apply" 
+            <Link
+              to="/apply"
               className="inline-block bg-[#fb7185] hover:bg-white hover:text-[#881337] text-white font-bold py-4 px-10 rounded-full transition-all duration-300"
             >
               Apply for Enrollment

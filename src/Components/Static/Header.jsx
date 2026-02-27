@@ -65,14 +65,14 @@ const Header = () => {
               />
             </div>
             
-            <div className="h-10 w-px bg-rose-200 hidden sm:block"></div>
+            {/* <div className="h-10 w-px bg-rose-200 hidden sm:block"></div>
 
             <div className="hidden sm:block">
               <h1 className="text-lg font-extrabold text-[#881337] leading-none tracking-tight">
                 GRAMYA <span className="text-[#be123c] font-light text-sm block">VDC INITIATIVE</span>
               </h1>
               <p className="text-[10px] uppercase tracking-[0.2em] text-rose-700 font-bold mt-1">IIT Patna • FIST</p>
-            </div>
+            </div> */}
           </Link>
 
           {/* Desktop Navigation */}
@@ -88,7 +88,7 @@ const Header = () => {
               
               <div className="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
                 <div className="bg-white shadow-2xl rounded-xl border border-rose-50 overflow-hidden min-w-[200px] p-2">
-                  {['Module 1', 'Module 2', 'Module 3'].map((item, idx) => (
+                  {['⁠Village Counsellor and Shakti Programme', '⁠Annapurna - Women in Agriculture', 'Entrepreneurship', '⁠Marketing Skills', '⁠IT and AI', '⁠Financial Enclosure'].map((item, idx) => (
                     <Link
                       key={idx}
                       to={`/module-${idx + 1}`}
@@ -162,9 +162,9 @@ const Header = () => {
                     </button>
                     {isModuleOpen && (
                       <div className="pl-4 flex flex-col gap-3 text-base font-medium text-gray-500 border-l-2 border-rose-100">
-                        <Link to="/module-1" onClick={() => setIsMobileMenuOpen(false)}>Module 1</Link>
+                        <Link to="/module-1" onClick={() => setIsMobileMenuOpen(false)}>⁠Village Counsellor and Shakti Programme</Link>
                         <Link to="/module-2" onClick={() => setIsMobileMenuOpen(false)}>Module 2</Link>
-                        <Link to="/module-3" onClick={() => setIsMobileMenuOpen(false)}>Module 3</Link>
+                        {/* <Link to="/module-3" onClick={() => setIsMobileMenuOpen(false)}>Module 3</Link> */}
                       </div>
                     )}
                   </div>
