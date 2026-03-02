@@ -47,8 +47,8 @@ const HeroSlider = () => {
   const slides = [
     {
       img: "img/image/ (10).jpeg",
-      title: "Empowering Rural Women and Youth",
-      subtitle: "Building Self-Reliant Communities through Dairy Farming"
+      title: "Skill. Innovate. Empower.",
+      subtitle: "Advancing Skills, Entrepreneurship & Sustainable Livelihoods"
     },
     {
       img: "img/image/ (20).jpeg",
