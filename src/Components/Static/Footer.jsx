@@ -84,13 +84,13 @@ const Footer = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="w-10 h-10 shrink-0 bg-[#be123c]/10 flex items-center justify-center rounded-lg border border-[#be123c]/20">
+                  {/* <div className="w-10 h-10 shrink-0 bg-[#be123c]/10 flex items-center justify-center rounded-lg border border-[#be123c]/20">
                     <Mail size={18} className="text-[#be123c]" />
-                  </div>
+                  </div> */}
                   <div>
-                    <p className="text-xs text-stone-500 uppercase tracking-tighter mb-1">Direct Contact</p>
-                    <p className="text-sm text-stone-200 font-medium">Dr. Pankaj Shukla</p>
-                    <a href="mailto:chairman@absolutegramya.com" className="text-xs text-[#be123c] hover:underline">chairman@absolutegramya.com</a>
+                    {/* <p className="text-xs text-stone-500 uppercase tracking-tighter mb-1">Direct Contact</p> */}
+                    {/* <p className="text-sm text-stone-200 font-medium">Dr. Pankaj Shukla</p>
+                    <a href="mailto:chairman@absolutegramya.com" className="text-xs text-[#be123c] hover:underline">chairman@absolutegramya.com</a> */}
                   </div>
                 </div>
               </div>

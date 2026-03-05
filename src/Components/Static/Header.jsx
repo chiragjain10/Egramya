@@ -27,10 +27,10 @@ const Header = () => {
       <div className="bg-[#881337] text-white py-2 px-6 lg:px-16 text-[11px] font-medium tracking-wider border-b border-rose-900/30">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <a href="mailto:chairman@absolutegramya.com" className="flex items-center gap-2 hover:text-rose-200 transition-colors">
+            {/* <a href="mailto:chairman@absolutegramya.com" className="flex items-center gap-2 hover:text-rose-200 transition-colors">
               <Mail size={14} className="text-rose-300" />
               <span className="hidden sm:inline">chairman@absolutegramya.com</span>
-            </a>
+            </a> */}
             <a href="tel:+911234567890" className="flex items-center gap-2 hover:text-rose-200 transition-colors">
               <Phone size={14} className="text-rose-300" />
               <span>+91 123 456 7890</span>
@@ -190,7 +190,7 @@ const Header = () => {
 
               <div className="p-8 bg-rose-50/50 text-sm text-gray-600">
                 <p className="font-bold text-[#881337] mb-2 uppercase tracking-widest text-[10px]">Support</p>
-                <p className="flex items-center gap-2 mb-1"><Mail size={14}/> chairman@absolutegramya.com</p>
+                {/* <p className="flex items-center gap-2 mb-1"><Mail size={14}/> chairman@absolutegramya.com</p> */}
                 <p className="flex items-center gap-2"><Phone size={14}/> +91 123 456 7890</p>
               </div>
             </motion.div>

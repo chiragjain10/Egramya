@@ -555,7 +555,7 @@ const Home = () => {
               The Village Dairy Counsellors (VDC) program is a flagship initiative designed to uplift women in rural India. By providing comprehensive training in modern dairy practices, financial literacy, and leadership, we aim to create a cadre of skilled professionals who will lead the White Revolution 2.0.
             </p>
             <ul className="space-y-4 mb-10">
-              {['Government Certified Training', '100% Free of Cost', 'Placement Assistance'].map((item, i) => (
+              {['Government Certified Training',  'Placement Assistance'].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-gray-700 font-medium text-lg">
                   <div className="bg-rose-50 p-1 rounded-full text-[#be123c]">
                     <CheckCircle2 size={20} />

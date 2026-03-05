@@ -6,7 +6,7 @@ import { ChevronRight, GraduationCap, Heart, Users } from "lucide-react";
 
 // --- Sub-Components ---
 const StatBox = ({ label, value, delay }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -21,79 +21,79 @@ const StatBox = ({ label, value, delay }) => (
 const AboutProgram = () => {
   return (
     <div className="min-h-screen bg-[#fff1f2] font-sans selection:bg-[#be123c]/20">
-      <SEO 
-        title="About Us" 
+      <SEO
+        title="About Us"
         description="Learn about Gramya's mission to empower rural women through the Village Dairy Counsellors program."
         keywords="About Gramya, Women Empowerment, Rural Leadership"
       />
-      
+
       {/* ================= 1. HERO HEADER ================= */}
       <header className="relative h-[60vh] min-h-[500px] overflow-hidden bg-[#fff1f2]">
 
-  {/* IMAGE */}
-  <div className="absolute inset-0">
-    <img
-      src="img/image/ (1).jpeg"
-      alt="Rural empowerment"
-      className="w-full h-full object-cover object-center"
-    />
+        {/* IMAGE */}
+        <div className="absolute inset-0">
+          <img
+            src="img/image/ (1).jpeg"
+            alt="Rural empowerment"
+            className="w-full h-full object-cover object-center"
+          />
 
-    {/* LIGHT OVERLAY FOR VISIBILITY */}
-    <div className="absolute inset-0 bg-white/60" />
+          {/* LIGHT OVERLAY FOR VISIBILITY */}
+          <div className="absolute inset-0 bg-white/60" />
 
-    {/* SOFT BOTTOM GRADIENT */}
-    <div className="absolute inset-0 bg-gradient-to-t from-[#fff1f2] via-transparent to-transparent" />
-  </div>
+          {/* SOFT BOTTOM GRADIENT */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#fff1f2] via-transparent to-transparent" />
+        </div>
 
-  {/* CONTENT */}
-  <div className="relative h-full max-w-7xl mx-auto px-6 flex flex-col justify-center pt-24">
+        {/* CONTENT */}
+        <div className="relative h-full max-w-7xl mx-auto px-6 flex flex-col justify-center pt-24">
 
-    {/* BREADCRUMB */}
-    <motion.div
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#881337] mb-6"
-    >
-      <Link to="/" className="hover:underline">
-        Home
-      </Link>
-      <ChevronRight size={12} />
-      <span className="text-[#be123c]">About Initiative</span>
-    </motion.div>
+          {/* BREADCRUMB */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#881337] mb-6"
+          >
+            <Link to="/" className="hover:underline">
+              Home
+            </Link>
+            <ChevronRight size={12} />
+            <span className="text-[#be123c]">About Initiative</span>
+          </motion.div>
 
-    {/* TITLE */}
-    <motion.h1
-      initial={{ opacity: 0, y: 25 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="text-4xl md:text-6xl font-extrabold text-[#881337] leading-tight max-w-4xl"
-    >
-      Empowering Rural Women and Youth
-      <span className="block mt-3 text-xl md:text-2xl font-medium text-[#be123c]">
-        Through Skill & Leadership
-      </span>
-    </motion.h1>
+          {/* TITLE */}
+          <motion.h1
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-6xl font-extrabold text-[#881337] leading-tight max-w-4xl"
+          >
+            Empowering Rural Women and Youth
+            <span className="block mt-3 text-xl md:text-2xl font-medium text-[#be123c]">
+              Through Skill & Leadership
+            </span>
+          </motion.h1>
 
-    {/* SUBTEXT (Optional but recommended) */}
-    <motion.p
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2, duration: 0.7 }}
-      className="mt-6 max-w-2xl text-gray-700 text-lg leading-relaxed"
-    >
-      Creating inclusive pathways for sustainable livelihoods by nurturing skills,
-      confidence, and leadership at the grassroots level.
-    </motion.p>
+          {/* SUBTEXT (Optional but recommended) */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.7 }}
+            className="mt-6 max-w-2xl text-gray-700 text-lg leading-relaxed"
+          >
+            Creating inclusive pathways for sustainable livelihoods by nurturing skills,
+            confidence, and leadership at the grassroots level.
+          </motion.p>
 
-  </div>
-</header>
+        </div>
+      </header>
 
       {/* ================= 2. MISSION & VISION ================= */}
       <section className="py-24 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -104,12 +104,19 @@ const AboutProgram = () => {
               Creating sustainable livelihoods for women and youth in rural India.
             </h2>
             <div className="w-20 h-1.5 bg-[#fb7185] rounded-full mb-8"></div>
-            
+
             <p className="text-gray-700 mb-6 text-lg leading-relaxed">
-              We believe that when you empower a woman, you empower a nation. Our program focuses on providing free, high-quality training in dairy farming, leadership, and entrepreneurship.
+              We believe that when you empower women and youth, you strengthen entire communities. Our programs provide free, high-quality training in agriculture, entrepreneurship, digital skills, and leadership to help rural individuals build sustainable livelihoods.
             </p>
+
             <p className="text-gray-700 mb-10 text-lg leading-relaxed">
-              By equipping them with technical skills and financial literacy, we transform them into <strong className="text-[#881337]">Village Dairy Counsellors</strong> who lead their communities.
+              Through initiatives like <strong className="text-[#881337]">Village Counsellor & Shakti Programme</strong>,
+              <strong className="text-[#881337]"> Annapurna – Women in Agriculture</strong>,
+              <strong className="text-[#881337]"> Entrepreneurship</strong>,
+              <strong className="text-[#881337]"> Marketing Skills</strong>,
+              <strong className="text-[#881337]"> IT & AI</strong>, and
+              <strong className="text-[#881337]"> Financial Inclusion</strong>,
+              we equip participants with practical knowledge, leadership abilities, and financial literacy to create opportunities and drive growth in their communities.
             </p>
 
             <div className="grid grid-cols-2 gap-6">
@@ -119,16 +126,16 @@ const AboutProgram = () => {
           </motion.div>
 
           <div className="relative">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white"
             >
-              <img 
-                src="img/image/ (10).jpeg" 
-                alt="Community work" 
+              <img
+                src="img/image/ (10).jpeg"
+                alt="Community work"
                 className="w-full h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#881337]/80 to-transparent flex flex-col justify-end p-10">
@@ -156,7 +163,7 @@ const AboutProgram = () => {
               { icon: GraduationCap, title: "Excellence", desc: "Providing world-class training standards adapted for local rural contexts." },
               { icon: Users, title: "Community", desc: "Fostering strong support networks and peer-to-peer learning among women groups." }
             ].map((item, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
