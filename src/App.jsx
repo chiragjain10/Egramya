@@ -16,6 +16,8 @@ import ModuleThreePage from "./Components/Pages/Module3";
 import ProgramStructurePage from "./Components/Pages/Structure";
 import EnrollPage from "./Components/Pages/Enroll";
 import Gallery from "./Components/Pages/Gallery";
+import KnowledgePartner from "./Components/Pages/KnowledgePartner";
+import OnlineCourses from "./Components/Pages/OnlineCourses";
 import WhatsAppWidget from "./Components/WhatsAppWidget";
 
 function App() {
@@ -38,6 +40,8 @@ function App() {
           <Route path="/structure" element={<ProgramStructurePage />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/enroll" element={<EnrollPage />} />
+          <Route path="/knowledge-partner" element={<KnowledgePartner />} />
+          <Route path="/courses" element={<OnlineCourses />} />
           <Route path="/module-1" element={<ModuleOnePage />} />
           <Route path="/module-2" element={<ModuleTwoPage />} />
           {/* <Route path="/module-3" element={<ModuleThreePage />} /> */}

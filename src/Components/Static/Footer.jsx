@@ -25,7 +25,7 @@ const Footer = () => {
             </Link>
 
             <p className="text-stone-400 text-sm leading-relaxed max-w-sm font-light">
-              A flagship collaborative initiative between <span className="text-white border-b border-stone-700">GRAMYA</span> and <span className="text-white border-b border-stone-700">FIST, IIT Patna</span>. Dedicated to empowering rural women through scientific dairy management and leadership.
+              A flagship collaborative initiative between <span className="text-white border-b border-stone-700">GRAMYA</span> and <span className="text-white border-b border-stone-700">FIST, IIT, PATNA</span>. Dedicated to empowering rural women through scientific dairy management and leadership.
             </p>
 
             <div className="flex gap-3">
@@ -49,6 +49,8 @@ const Footer = () => {
                 { label: 'Home', path: '/' },
                 { label: 'About us', path: '/about' },
                 { label: 'Programs', path: '/structure' },
+                { label: 'Online Courses', path: '/courses' },
+                { label: 'Knowledge Partner', path: '/knowledge-partner' },
                 { label: 'Gallery', path: '/gallery' },
                 { label: 'Enroll Now', path: '/enroll' },
               ].map(({ label, path }) => (
@@ -100,7 +102,7 @@ const Footer = () => {
             <div className="p-4 bg-gradient-to-br from-stone-900 to-black border border-stone-800 rounded-xl">
               <p className="text-[10px] text-stone-500 uppercase tracking-[0.2em] mb-3">Institutional Partners</p>
               <div className="flex items-center gap-3">
-                <span className="text-xs font-bold text-white tracking-tight">FIST, IIT PATNA</span>
+                <span className="text-xs font-bold text-white tracking-tight">FIST, IIT, PATNA</span>
                 <div className="h-3 w-[1px] bg-stone-700" />
                 <span className="text-xs font-bold text-white tracking-tight">GRAMYA</span>
               </div>

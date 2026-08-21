@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 const SEO = ({ title, description, keywords, url, image }) => {
   const siteTitle = "Gramya | Village Dairy Counsellors Program";
   const defaultDescription = "Gramya's Village Dairy Counsellors (VDC) Program empowers rural women through skill development in dairy farming, leadership, and entrepreneurship.";
-  const defaultKeywords = "Gramya, Village Dairy Counsellors, Women Empowerment, Dairy Farming, Rural Development, Skill Training, IIT Patna";
+  const defaultKeywords = "Gramya, Village Dairy Counsellors, Women Empowerment, Dairy Farming, Rural Development, Skill Training, FIST, IIT, PATNA";
   const siteUrl = "https://www.absolutegramya.com";
   const defaultImage = "https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=2070&auto=format&fit=crop";
 

@@ -182,7 +182,7 @@ const ProgramPage = () => {
             </p>
             <div className="grid grid-cols-1 gap-4">
               {[
-                "Strategic Curriculum Development with IIT Patna",
+                "Strategic Curriculum Development with FIST, IIT, PATNA",
                 "Last-mile digital data collection & analysis",
                 "Phygital mentoring for 5,000+ counsellors",
                 "Multi-stakeholder governance & CSR reporting"
@@ -198,7 +198,7 @@ const ProgramPage = () => {
             <Microscope className="text-rose-400 mb-6" size={48} />
             <h3 className="text-2xl font-bold mb-4 text-rose-100">Technical Collaboration</h3>
             <p className="text-rose-200/70 mb-8 leading-relaxed">
-              Our training modules are developed in collaboration with elite academic institutions like **IIT Patna**, ensuring that VDCs are equipped with the latest in IoT and data-driven farming.
+              Our training modules are developed in collaboration with elite academic institutions like **FIST, IIT, PATNA**, ensuring that VDCs are equipped with the latest in IoT and data-driven farming.
             </p>
             <div className="h-[2px] bg-rose-500/30 w-full mb-8" />
             <button className="w-full py-4 border border-rose-400/50 rounded-2xl font-bold hover:bg-rose-400/10 transition-all">
